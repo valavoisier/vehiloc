@@ -19,205 +19,43 @@
     <p>Que vous ayez besoin d'une petite citadine agile, d'une berline élégante ou même d'un SUV spacieux, nous avons
         une variété de véhicules pour répondre à vos exigences.</p>
     <div class="fleet-list">
-        <article>
-            <div class="mini-car-title">
-                <a href="car.html">
-                    <h3>Renault Twingo</h3>
-                    <p>ou similaire | Saint-Étienne</p>
-                </a>
-                <div>
-                    <a href="#"><img src="{{ asset('icons/trash.png') }}" alt="Supprimer" ></a>
+        {% for voiture in voitures %}
+            <article>            
+                <div class="mini-car-title">
+                    <a href="{{ path('app_voiture_detail', {'id': voiture.id}) }}">
+                        <h3>{{ voiture.nom }}</h3>
+                        <p>ou similaire | Saint-Étienne</p>
+                    </a>
+                    <div>
+                        <a href="{{ path('app_voiture_delete', {'id': voiture.id}) }}"><img src="{{ asset('icons/trash.png') }}" alt="Supprimer" ></a>
+                    </div>
                 </div>
-            </div>
-            <div class="mini-car-icons">
-                <div>
-                    <img src="{{ asset('icons/persons.png') }}" alt="4 places" />
-                    <p>4 places</p>
+                <div class="mini-car-icons">
+                    <div>
+                        <img src="{{ asset('icons/persons.png') }}" alt="{{ voiture.places }} places" />
+                        <p>{{ voiture.places }} places</p>
+                    </div>
+                    <div>
+                        <img src="{{ asset('icons/motor.png') }}" alt="{{ voiture.manuelle ? 'Manuelle' : 'Automatique' }}" />
+                        <p>{{ voiture.manuelle ? 'Manuelle' : 'Automatique' }}</p>
+                    </div>
+                    <div>
+                        <img src="{{ asset('icons/km.png') }}" alt="km illimités" />
+                        <p>Km illimités</p>
+                    </div>
+                    <div>
+                        <img src="{{ asset('icons/plus.png') }}" alt="PLus" />
+                        <p>Plus</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="{{ asset('icons/motor.png') }}" alt="Manuelle" />
-                    <p>Manuelle</p>
+                <div class="mini-car-price">
+                    <p class="price-per-day">{{ voiture.prixQuotidien }} € / jour</p>
+                    <p class="price-per-month">{{ voiture.prixMensuel }} € / mois</p>
                 </div>
-                <div>
-                    <img src="{{ asset('icons/km.png') }}" alt="km illimités" />
-                    <p>Km illimités</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/plus.png') }}" alt="PLus" />
-                    <p>Plus</p>
-                </div>
-            </div>
-            <div class="mini-car-price">
-                <p class="price-per-day">39,14 € / jour</p>
-                <p class="price-per-month">900,00 € / mois</p>
-            </div>
-        </article>
-        <article>
-            <div class="mini-car-title">
-                <a href="car.html">
-                    <h3>Renault Clio</h3>
-                    <p>ou similaire | Saint-Étienne</p>
-                </a>
-                <div>
-                    <a href="#"><img src="{{ asset('icons/trash.png') }}" alt="Supprimer" /></a>
-                </div>
-            </div>
-            <div class="mini-car-icons">
-                <div>
-                    <img src="{{ asset('icons/persons.png') }}" alt="4 places" />
-                    <p>4 places</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/motor.png') }}" alt="Manuelle" />
-                    <p>Manuelle</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/km.png') }}" alt="km illimités" />
-                    <p>Km illimités</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/plus.png') }}" alt="PLus" />
-                    <p>Plus</p>
-                </div>
-            </div>
-            <div class="mini-car-price">
-                <p class="price-per-day">38,64 € / jour</p>
-                <p class="price-per-month">850,00 € / mois</p>
-            </div>
-        </article>
-        <article>
-            <div class="mini-car-title">
-                <a href="car.html">
-                    <h3>BMX IX (Electric)</h3>
-                    <p>ou similaire | Saint-Étienne</p>
-                </a>
-                <div>
-                    <a href="#"><img src="{{ asset('icons/trash.png') }}" alt="Supprimer" /></a>
-                </div>
-            </div>
-            <div class="mini-car-icons">
-                <div>
-                    <img src="{{ asset('icons/persons.png') }}" alt="4 places" />
-                    <p>4 places</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/motor.png') }}" alt="Manuelle" />
-                    <p>Manuelle</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/km.png') }}" alt="km illimités" />
-                    <p>Km illimités</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/plus.png') }}" alt="PLus" />
-                    <p>Plus</p>
-                </div>
-            </div>
-            <div class="mini-car-price">
-                <p class="price-per-day">42,40 € / jour</p>
-                <p class="price-per-month">950,00 € / mois</p>
-            </div>
-        </article>
-        <article>
-            <div class="mini-car-title">
-                <a href="car.html">
-                    <h3>Renault Zoé</h3>
-                    <p>ou similaire | Saint-Étienne</p>
-                </a>
-                <div>
-                    <a href="#"><img src="{{ asset('icons/trash.png') }}" alt="Supprimer" /></a>
-                </div>
-            </div>
-            <div class="mini-car-icons">
-                <div>
-                    <img src="{{ asset('icons/persons.png') }}" alt="4 places" />
-                    <p>4 places</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/motor.png') }}" alt="Manuelle" />
-                    <p>Manuelle</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/km.png') }}" alt="km illimités" />
-                    <p>Km illimités</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/plus.png') }}" alt="PLus" />
-                    <p>Plus</p>
-                </div>
-            </div>
-            <div class="mini-car-price">
-                <p class="price-per-day">39,14 € / jour</p>
-                <p class="price-per-month">900,00 € / mois</p>
-            </div>
-        </article>
-        <article>
-            <div class="mini-car-title">
-                <a href="car.html">
-                    <h3>Citroën Ami</h3>
-                    <p>ou similaire | Saint-Étienne</p>
-                </a>
-                <div>
-                    <a href="#"><img src="{{ asset('icons/trash.png') }}" alt="Supprimer" /></a>
-                </div>
-            </div>
-            <div class="mini-car-icons">
-                <div>
-                    <img src="{{ asset('icons/persons.png') }}" alt="4 places" />
-                    <p>4 places</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/motor.png') }}" alt="Manuelle" />
-                    <p>Manuelle</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/km.png') }}" alt="km illimités" />
-                    <p>Km illimités</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/plus.png') }}" alt="PLus" />
-                    <p>Plus</p>
-                </div>
-            </div>
-            <div class="mini-car-price">
-                <p class="price-per-day">28,59 € / jour</p>
-                <p class="price-per-month">799,00 € / mois</p>
-            </div>
-        </article>
-        <article>
-            <div class="mini-car-title">
-                <a href="car.html">
-                    <h3>Opel Corsa</h3>
-                    <p>ou similaire | Saint-Étienne</p>
-                </a>
-                <div>
-                    <a href="#"><img src="{{ asset('icons/trash.png') }}" alt="Supprimer" /></a>
-                </div>
-            </div>
-            <div class="mini-car-icons">
-                <div>
-                    <img src="{{ asset('icons/persons.png') }}" alt="4 places" />
-                    <p>4 places</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/motor.png') }}" alt="Manuelle" />
-                    <p>Manuelle</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/km.png') }}" alt="km illimités" />
-                    <p>Km illimités</p>
-                </div>
-                <div>
-                    <img src="{{ asset('icons/plus.png') }}" alt="PLus" />
-                    <p>Plus</p>
-                </div>
-            </div>
-            <div class="mini-car-price">
-                <p class="price-per-day">36,38 € / jour</p>
-                <p class="price-per-month">820,00 € / mois</p>
-            </div>
-        </article>
-
+            </article>
+        {% else %}
+            <div>Aucune voiture enregistrée actuellement.</div>        
+        {% endfor %}
     </div>
 </section>
 
