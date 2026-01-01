@@ -1,0 +1,32 @@
+# Messages de validation personnalisés pour les entités
+# Ces messages remplacent les messages par défaut de Symfony
+
+# Messages pour l'entité Voiture
+Voiture:
+  nom:
+    not_blank: "Le nom de la voiture est obligatoire."
+    length:
+      min: "Le nom doit contenir au moins {{ limit }} caractères."
+      max: "Le nom ne peut pas dépasser {{ limit }} caractères."
+  
+  description:
+    not_blank: "La description est obligatoire."
+    length:
+      min: "La description doit contenir au moins {{ limit }} caractères."
+  
+  prixQuotidien:
+    not_blank: "Le prix quotidien est obligatoire."
+    positive: "Le prix quotidien doit être supérieur à 0."
+  
+  prixMensuel:
+    not_blank: "Le prix mensuel est obligatoire."
+    positive: "Le prix mensuel doit être supérieur à 0."
+  
+  places:
+    not_blank: "Le nombre de places est obligatoire."
+    positive: "Le nombre de places doit être supérieur à 0."
+    range:
+      not_in_range: "Le nombre de places doit être entre {{ min }} et {{ max }}."
+  
+  manuelle:
+    not_null: "Le type de boîte de vitesses est obligatoire."
