@@ -38,7 +38,7 @@ final class HomeController extends AbstractController
         }
         
         return $this->render('home/add.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
         ]);
     }
 

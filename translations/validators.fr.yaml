@@ -1,32 +1,17 @@
-# Messages de validation personnalisés pour les entités
-# Ces messages remplacent les messages par défaut de Symfony
+# Fichier de traduction des messages de validation
 
-# Messages pour l'entité Voiture
-Voiture:
-  nom:
-    not_blank: "Le nom de la voiture est obligatoire."
-    length:
-      min: "Le nom doit contenir au moins {{ limit }} caractères."
-      max: "Le nom ne peut pas dépasser {{ limit }} caractères."
-  
-  description:
-    not_blank: "La description est obligatoire."
-    length:
-      min: "La description doit contenir au moins {{ limit }} caractères."
-  
-  prixQuotidien:
-    not_blank: "Le prix quotidien est obligatoire."
-    positive: "Le prix quotidien doit être supérieur à 0."
-  
-  prixMensuel:
-    not_blank: "Le prix mensuel est obligatoire."
-    positive: "Le prix mensuel doit être supérieur à 0."
-  
-  places:
-    not_blank: "Le nombre de places est obligatoire."
-    positive: "Le nombre de places doit être supérieur à 0."
-    range:
-      not_in_range: "Le nombre de places doit être entre {{ min }} et {{ max }}."
-  
-  manuelle:
-    not_null: "Le type de boîte de vitesses est obligatoire."
+# Messages pour NotBlank
+'This value should not be blank.': 'Ce champ est obligatoire.'
+
+# Messages pour Length
+'This value is too short. It should have {{ limit }} character or more.|This value is too short. It should have {{ limit }} characters or more.': 'Cette valeur est trop courte. Elle doit avoir au moins {{ limit }} caractère.|Cette valeur est trop courte. Elle doit avoir au moins {{ limit }} caractères.'
+'This value is too long. It should have {{ limit }} character or less.|This value is too long. It should have {{ limit }} characters or less.': 'Cette valeur est trop longue. Elle doit avoir au maximum {{ limit }} caractère.|Cette valeur est trop longue. Elle doit avoir au maximum {{ limit }} caractères.'
+
+# Messages pour Positive
+'This value should be positive.': 'Cette valeur doit être positive.'
+
+# Messages pour Range
+'This value should be between {{ min }} and {{ max }}.': 'Cette valeur doit être comprise entre {{ min }} et {{ max }}.'
+
+# Messages pour NotNull
+'This value should not be null.': 'Ce champ ne peut pas être vide.'

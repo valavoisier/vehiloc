@@ -84,18 +84,22 @@ h1 {
     font-size: 16px;
 }
 
-#fleet h2 {
-    font-weight: 400;
+.fleet-header {
     text-align: center;
     margin-top: 60px;
-    font-size: 30px;
+    margin-bottom: 50px;
 }
 
-#fleet h2 ~ p {
+.fleet-header h2 {
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0;
+}
+
+.fleet-header p {
     color: #8A8A8A;
     max-width: 650px;
-    margin: auto;
-    text-align: center;
+    margin: 20px auto 0;
 }
 
 .fleet-list {

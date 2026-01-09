@@ -15,12 +15,10 @@
 
 {% block body %}
 <section id="fleet">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <div>
-            <h2>Découvrez la flotte de véhicules chez Véhicloc</h2>
-            <p>Que vous ayez besoin d'une petite citadine agile, d'une berline élégante ou même d'un SUV spacieux, nous avons
-                une variété de véhicules pour répondre à vos exigences.</p>
-        </div>
+    <div class="fleet-header">
+        <h2>Découvrez la flotte de véhicules chez Véhicloc</h2>
+        <p>Que vous ayez besoin d'une petite citadine agile, d'une berline élégante ou même d'un SUV spacieux, nous avons
+            une variété de véhicules pour répondre à vos exigences.</p>
     </div>
     <div class="fleet-list">
         {% for voiture in voitures %}

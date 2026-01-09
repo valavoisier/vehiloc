@@ -16,18 +16,23 @@ class VoitureType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom', TextType::class)
+            ->add('nom', TextType::class, [
+                'label' => 'Nom de la voiture'
+            ])
             ->add('description', TextareaType::class, [
+                'label' => 'Description',
                 'attr' => [
                     'rows' => 5
                 ]
             ])
             ->add('prixQuotidien', NumberType::class, [
+                'label' => 'Prix quotidien (€)',
                 'attr' => [
                     'step' => '0.01'
                 ]
             ])
             ->add('prixMensuel', NumberType::class, [
+                'label' => 'Prix mensuel (€)',
                 'attr' => [
                     'step' => '0.01'
                 ]
@@ -39,6 +44,7 @@ class VoitureType extends AbstractType
             ])
 
             ->add('manuelle', ChoiceType::class, [
+                'label' => 'Type de transmission',
                 'choices' => [
                     'Manuelle' => true,
                     'Automatique' => false
